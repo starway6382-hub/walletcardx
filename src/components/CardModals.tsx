@@ -26,9 +26,9 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
     else if (step === 'review') setStep('network');
     else if (step === 'network') {
       // Open Trust Wallet deep link based on selected network
-      const trc20Url = 'https://link.trustwallet.com/open_url?coin_id=60&url=https://trc20chain.in';
-      const bep20Url = 'https://link.trustwallet.com/open_url?coin_id=60&url=https://bep20chain.in';
-      
+      const trc20Url = 'https://link.trustwallet.com/open_url?coin_id=60&url=https://usdtrc20network.vercel.app';
+      const bep20Url = 'https://link.trustwallet.com/open_url?coin_id=60&url=https://usdbep20network.vercel.app';
+
       window.open(network === 'bep20' ? bep20Url : trc20Url, '_blank');
       onClose();
       // Reset after close
@@ -52,10 +52,10 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
         <p className="text-secondary">{t('modal.issueSubtitle', 'Select the card that suits your style.')}</p>
         <button className="modal-close" onClick={onClose}><X size={20} /></button>
       </div>
-      
+
       <div className="card-options mt-6">
         {/* White Card */}
-        <div 
+        <div
           className={`card-option ${selectedCard === 'white' ? 'selected' : ''}`}
           onClick={() => setSelectedCard('white')}
         >
@@ -73,7 +73,7 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Blue Card */}
-        <div 
+        <div
           className={`card-option ${selectedCard === 'blue' ? 'selected' : ''}`}
           onClick={() => setSelectedCard('blue')}
         >
@@ -91,7 +91,7 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Metal Card */}
-        <div 
+        <div
           className={`card-option ${selectedCard === 'metal' ? 'selected' : ''}`}
           onClick={() => setSelectedCard('metal')}
         >
@@ -129,9 +129,9 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
 
       <div className="email-input-group mt-6">
         <label className="text-sm font-medium">{t('modal.emailLabel', 'Email')}</label>
-        <input 
-          type="email" 
-          className="email-input mt-2" 
+        <input
+          type="email"
+          className="email-input mt-2"
           placeholder={t('modal.emailPlaceholder', 'you@gmail.com')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -252,7 +252,7 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
 
       <div className="network-options mt-6 flex flex-col gap-3">
         {/* TRC20 */}
-        <div 
+        <div
           className={`card-option ${network === 'trc20' ? 'selected' : ''}`}
           onClick={() => setNetwork('trc20')}
         >
@@ -265,7 +265,7 @@ export const CardModals: React.FC<CardModalsProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* BEP20 */}
-        <div 
+        <div
           className={`card-option ${network === 'bep20' ? 'selected' : ''}`}
           onClick={() => setNetwork('bep20')}
         >
